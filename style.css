@@ -1,0 +1,244 @@
+/* Estilos básicos para o corpo da página */
+body {
+    background: #f4f6fb;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Estilos do modo escuro */
+.dark-mode {
+    background: #181818;
+    color: #f4f6fb;
+}
+
+/* Container principal da aplicação */
+.container {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Container no modo escuro */
+.dark-mode .container {
+    background: #2a3f5f;
+}
+
+/* Título centralizado */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Área de input e botão para adicionar tarefas */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo do campo de input */
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Botão de adicionar tarefa */
+.input-area button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.input-area button:hover {
+    background-color: #45a049;
+}
+
+/* Área de filtros */
+.filter-area {
+    margin-bottom: 20px;
+}
+
+/* Botão que alterna a exibição dos filtros */
+#filterToggle {
+    background: #ff4c4c;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+#filterToggle:hover {
+    background: #e63939;
+}
+
+/* Container das opções de filtro */
+#filterOptions {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#filterOptions button {
+    flex: 1;
+    background: #ddd;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#filterOptions button:hover {
+    background: #ccc;
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Lista de tarefas sem marcadores */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Área de rolagem exclusiva para as tasks.
+   Define uma altura máxima para a lista de tarefas e adiciona scroll vertical se necessário */
+#taskList {
+    max-height: 300px;   /* Ajuste a altura conforme necessário */
+    overflow-y: auto;
+    padding-right: 10px; /* Espaço para a barra de rolagem */
+}
+
+/* Estilo de cada tarefa (item da lista) */
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    gap: 10px;
+    position: relative;
+    transition: background 0.3s, opacity 0.5s, transform 0.5s;
+}
+
+/* Tarefa concluída: texto riscado e opacidade menor */
+li.checked span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Texto da tarefa */
+li span {
+    flex: 1;
+    cursor: pointer;
+}
+
+/* Botões dentro das tarefas */
+li button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Ajuste de cor para tarefas no modo escuro (melhor legibilidade) */
+.dark-mode li {
+    background: #444;
+    color: #f4f6fb;
+}
+
+/* Botão para concluir tarefa */
+.complete-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+.complete-btn:hover {
+    background-color: #45a049;
+}
+
+/* Botão para excluir tarefa */
+.delete-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+/* Tooltip para orientar a edição da tarefa */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Animação fade-in para adição da tarefa */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Animação fade-out para remoção da tarefa */
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(20px); }
+}
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Botão para alternar o modo escuro */
+#darkModeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4c4c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+  <!-- Link do arquivo de estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Botão para alternar o modo escuro; o ícone é alterado de acordo com o estado -->
+  <button id="darkModeBtn">🌙</button>
+
+  <div class="container">
+    <!-- Título da aplicação -->
+    <h2>To-Do List 📝</h2>
+    
+    <!-- Área de entrada de tarefa: input e botão para adicionar -->
+    <div class="input-area">
+      <input id="taskInput" type="text" placeholder="Adicione sua tarefa" />
+      <button id="addTaskBtn">Adicionar</button>
+    </div>
+
+    <!-- Área de filtros -->
+    <div class="filter-area">
+      <button id="filterToggle">Filtros ⏷</button>
+      <!-- Opções de filtro ocultas inicialmente -->
+      <div id="filterOptions" class="hidden">
+        <button data-filter="all">Todas</button>
+        <button data-filter="completed">Concluídas</button>
+        <button data-filter="pending">Pendentes</button>
+      </div>
+    </div>
+
+    <!-- Lista onde as tarefas serão exibidas.
+         Essa área agora tem rolagem interna caso haja muitas tasks -->
+    <ul id="taskList"></ul>
+  </div>
+  
+  <!-- Link do arquivo de script -->
+  <script src="script.js"></script>
+</body>
+</html>
