@@ -155,4 +155,4 @@ Este documento serve para guiar o desenvolvimento da Aplicação Web de Lista de
 
 ---
 
-Github Page: https://henryloureiro.github.io/Projeto_To-do_List/
+Github Page: https://henryloureiro.github.io/To-do_List/
