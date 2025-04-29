@@ -152,3 +152,5 @@ A validação do escopo garante que os objetivos e requisitos do projeto sejam a
 Este documento serve para guiar o desenvolvimento da Aplicação Web de Lista de Tarefas, assegurando que o produto final atenda tanto às necessidades dos usuários quanto aos padrões de qualidade e usabilidade esperados. A definição, criação e validação do escopo são conduzidas de forma colaborativa e iterativa, minimizando riscos e facilitando a implementação incremental de melhorias.
 
 À medida que novas necessidades surgirem ou ajustes forem necessários durante o desenvolvimento, a revisão contínua deste documento ajudará a manter o projeto alinhado com os objetivos iniciais e as expectativas dos usuários.
+
+Github Page: https://henryloureiro.github.io/Projeto_To-do_List/
