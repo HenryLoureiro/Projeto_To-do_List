@@ -153,4 +153,6 @@ Este documento serve para guiar o desenvolvimento da Aplicação Web de Lista de
 
 À medida que novas necessidades surgirem ou ajustes forem necessários durante o desenvolvimento, a revisão contínua deste documento ajudará a manter o projeto alinhado com os objetivos iniciais e as expectativas dos usuários.
 
+---
+
 Github Page: https://henryloureiro.github.io/Projeto_To-do_List/
