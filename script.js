@@ -58,6 +58,8 @@ function addTask() {
 
 function editTask(event) {
     const span = event.target;
+    removeTooltip(span);
+    
     const input = document.createElement("input");
     input.value = span.textContent;
     input.classList.add("edit-mode");
@@ -148,7 +150,7 @@ function attachTooltipEvents(span) {
             requestAnimationFrame(() => {
                 tooltip.style.opacity = "1";
             });
-        }, 1000);
+        }, 500); // Tooltip aparece mais rápido
 
         span._tooltipTimer = timer;
     });
@@ -165,7 +167,24 @@ function attachTooltipEvents(span) {
                     }
                     span._tooltip = null;
                 }, 300);
-            }, 1000);
+            }, 500); // Tooltip desaparece mais rápido
         }
     });
+
+    span.addEventListener("dblclick", function() {
+        removeTooltip(span);
+    });
+}
+
+function removeTooltip(span) {
+    if (span._tooltip) {
+        clearTimeout(span._tooltipTimer);
+        span._tooltip.style.opacity = "0";
+        setTimeout(() => {
+            if (span._tooltip && span._tooltip.parentElement) {
+                span._tooltip.parentElement.removeChild(span._tooltip);
+            }
+            span._tooltip = null;
+        }, 100);
+    }
 }
